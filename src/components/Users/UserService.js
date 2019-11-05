@@ -1,9 +1,10 @@
 import axios from 'axios'
-const url = 'http://localhost:3000/api/user'
+const url = 'http://boardofdirectors.herokuapp.com/api/v1/person'
 //export default class UserService {
 // constructor() {}
 export default {
   getUsers() {
+    alert('getting')
     return axios.get(url).then(response => response.data)
   },
   saveUserBK(user) {
@@ -17,9 +18,7 @@ export default {
       .then(response => response.data.message)
   },
   saveUser(user) {
-    return axios
-      .post('http://janburger.herokuapp.com/api/v1/person', user)
-      .then(response => response.data.message)
+    return axios.post(url, user).then(response => response.data.message)
   },
   deleteUser(userId) {
     return axios

@@ -14,9 +14,9 @@ export default {
   methods: {
     getUsers: function() {
       UserService.getUsers().then(data => {
-        alert(data.result)
-        this.items = data.result
-        this.message = data.message
+        //  alert(data[0].name)
+        this.items = data
+        //this.message = data.message
       })
     },
 
